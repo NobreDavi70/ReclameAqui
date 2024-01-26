@@ -13,6 +13,7 @@ import streamlit as st
 
 st.title("Número de Reclamações")
 st.subheader("Empresas: HAPVIDA, NAGEM e IBYTE")
+st.subheader("Aluno: Antonio Davi Silva Nobre")
 st.divider()
 df_HAP = pd.read_csv('RECLAMEAQUI_HAPVIDA.csv')
 df_IBY = pd.read_csv('RECLAMEAQUI_IBYTE.csv')
