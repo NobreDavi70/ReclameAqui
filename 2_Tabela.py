@@ -8,11 +8,7 @@
 
 import pandas as pd
 import numpy as np
-import plotly.express as px
 import matplotlib as mp
-import panel as pn
-import ipywidgets as widgets
-from IPython.display import display
 import streamlit as st
 
 st.title("Número de Reclamações")
