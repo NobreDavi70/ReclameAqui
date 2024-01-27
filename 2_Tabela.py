@@ -46,7 +46,7 @@ estado = st.sidebar.selectbox(
     'Qual Estado?',lista_estados)
 
 #st.write(nag)
-st.write(df[df.EMPRESA == empresa & df.ESTADO == estado].head(qtd))
+st.write(df[(df.EMPRESA == empresa) & (df.ESTADO == estado)].head(qtd))
 
 #st.write(df[df['ESTADO'] == estado])
 
