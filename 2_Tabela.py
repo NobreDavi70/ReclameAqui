@@ -41,7 +41,6 @@ empresa = st.sidebar.selectbox(
 
 lista_estados = ["AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RR","RS","SC","SE","SP","TO"]
 
-st.sidebar.divider()
 estado = st.sidebar.selectbox(
     'Qual Estado?',lista_estados)
 
