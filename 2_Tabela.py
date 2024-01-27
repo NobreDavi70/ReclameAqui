@@ -44,8 +44,8 @@ estado = st.sidebar.selectbox(
     'Qual Estado?',lista_estados)
 
 #st.write(nag)
-col1, col2, col3 = st.columns(3)
 st.write("Total de Reclamações por Empresa:")
+col1, col2, col3 = st.columns(3)
 col1.metric("Nagem", (df[df.EMPRESA == "NAGEM"])["ID"].count(), "33,16%")
 col2.metric("Ibyte", (df[df.EMPRESA == "IBYTE"])["ID"].count(), "33,16%")
 col3.metric("Hapvida", (df[df.EMPRESA == "HAPVIDA"])["ID"].count(), "33,68%")
