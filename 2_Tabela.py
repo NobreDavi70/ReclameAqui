@@ -31,10 +31,10 @@ df['TEMPO']=pd.to_datetime(df['TEMPO'])
 df['ESTADO'] = [x.split(' - ')[1] for x in df['LOCAL']]
 
 
-qtd = st.slider('Quantas reclamações você deseja filtrar?', 0, 1000, 500)
+qtd = st.sidebar.slider('Quantas reclamações você deseja filtrar?', 0, 1000, 500)
 
 st.divider()
-option = st.selectbox(
+option = st.sidebar.selectbox(
     'Qual empresa?',
     ('NAGEM', 'IBYTE', 'HAPVIDA'))
 
@@ -44,7 +44,7 @@ st.write(df[df['EMPRESA'] == option].head(qtd))
 lista_estados = ["AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RR","RS","SC","SE","SP","TO"]
 
 st.divider()
-option2 = st.selectbox(
+option2 = st.sidebar.selectbox(
     'Qual Estado?',lista_estados)
 st.write(df[df['ESTADO'] == option2])
 #st.line_chart((df[df['ESTADO'] == option2 and df['EMPRESA'] == option]).groupby('MES').nunique()['ID'])
