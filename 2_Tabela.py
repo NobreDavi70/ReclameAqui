@@ -33,7 +33,6 @@ df['ESTADO'] = [x.split(' - ')[1] for x in df['LOCAL']]
 st.sidebar.subheader("Menu de Filtros")
 st.sidebar.divider()
 qtd = st.sidebar.slider('Quantas reclamações você deseja filtrar?', 0, 1000, 500)
-st.sidebar.divider()
 
 empresa = st.sidebar.selectbox(
     'Qual empresa?',
