@@ -42,7 +42,7 @@ lista_estados = ["AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA
 
 estado = st.sidebar.selectbox(
     'Qual Estado?',lista_estados)
-
+st.sidebar.divider()
 #st.write(nag)
 st.write("Total de Reclamações por Empresa:")
 col1, col2, col3 = st.columns(3)
