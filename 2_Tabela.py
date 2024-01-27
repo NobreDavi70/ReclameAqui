@@ -44,6 +44,11 @@ estado = st.sidebar.selectbox(
     'Qual Estado?',lista_estados)
 
 #st.write(nag)
+col1, col2, col3 = st.columns(3)
+col1.metric("Total Nagem", (df[df.EMPRESA == "NAGEM"])["ID"].count(), "1.2 °F")
+col2.metric("Total Ibyte", (df[df.EMPRESA == "IBYTE"])["ID"].count(), "-8%")
+col3.metric("Total Hapvida", (df[df.EMPRESA == "HAPVIDA"])["ID"].count(), "4%")
+st.divider()
 st.write(df[(df.EMPRESA == empresa) & (df.ESTADO == estado)].head(qtd),weith=200)
 
 #st.write(df[df['ESTADO'] == estado])
