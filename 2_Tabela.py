@@ -49,9 +49,10 @@ st.write(df[(df.EMPRESA == empresa) & (df.ESTADO == estado)].head(qtd),weith=200
 #st.write(df[df['ESTADO'] == estado])
 
 #st.line_chart((df[df['ESTADO'] == estado and df['EMPRESA'] == empresa]).groupby('MES').nunique()['ID'])
+st.divider()
 st.metric(label="Total de Reclamações no Estado de " + estado + ", da empresa " + empresa, value=(df[(df.EMPRESA == empresa) & (df.ESTADO == estado)])["ID"].count())
 df1 = df[(df.EMPRESA == empresa) & (df.ESTADO == estado)]
 st.write(df1["STATUS"].value_counts())
-
+st.sidebar.divider()
 st.subheader("Evolução temporal do Número de Reclamações do Estado de " + estado)
 st.line_chart(df1.groupby('MES').nunique()['ID'])
