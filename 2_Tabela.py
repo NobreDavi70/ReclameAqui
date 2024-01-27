@@ -45,9 +45,10 @@ estado = st.sidebar.selectbox(
 
 #st.write(nag)
 col1, col2, col3 = st.columns(3)
-col1.metric("Total Nagem", (df[df.EMPRESA == "NAGEM"])["ID"].count(), "1.2 °F")
-col2.metric("Total Ibyte", (df[df.EMPRESA == "IBYTE"])["ID"].count(), "-8%")
-col3.metric("Total Hapvida", (df[df.EMPRESA == "HAPVIDA"])["ID"].count(), "4%")
+st.write("Total de Reclamações por Empresa:")
+col1.metric("Nagem", (df[df.EMPRESA == "NAGEM"])["ID"].count(), "33,16%")
+col2.metric("Ibyte", (df[df.EMPRESA == "IBYTE"])["ID"].count(), "33,16%")
+col3.metric("Hapvida", (df[df.EMPRESA == "HAPVIDA"])["ID"].count(), "33,68%")
 st.divider()
 st.write(df[(df.EMPRESA == empresa) & (df.ESTADO == estado)].head(qtd),weith=200)
 
