@@ -35,25 +35,25 @@ st.sidebar.divider()
 qtd = st.sidebar.slider('Quantas reclamações você deseja filtrar?', 0, 1000, 500)
 st.sidebar.divider()
 
-option = st.sidebar.selectbox(
+empresa = st.sidebar.selectbox(
     'Qual empresa?',
     ('NAGEM', 'IBYTE', 'HAPVIDA'))
 
 lista_estados = ["AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RR","RS","SC","SE","SP","TO"]
 
 st.sidebar.divider()
-option2 = st.sidebar.selectbox(
+estado = st.sidebar.selectbox(
     'Qual Estado?',lista_estados)
 
 #st.write(nag)
-st.write(df[df['EMPRESA'] == option and df['ESTADO'] == option2].head(qtd))
+st.write(df[df['EMPRESA'] == empresa & df['ESTADO'] == estado].head(qtd))
 
-#st.write(df[df['ESTADO'] == option2])
+#st.write(df[df['ESTADO'] == estado])
 
-#st.line_chart((df[df['ESTADO'] == option2 and df['EMPRESA'] == option]).groupby('MES').nunique()['ID'])
-st.metric(label="Total de Reclamações no Estado de "+option2, value=(df[df['ESTADO'] == option2])["ID"].count())
-df1 = df[df['ESTADO'] == option2]
+#st.line_chart((df[df['ESTADO'] == estado and df['EMPRESA'] == empresa]).groupby('MES').nunique()['ID'])
+st.metric(label="Total de Reclamações no Estado de "+option2, value=(df[df['ESTADO'] == estado])["ID"].count())
+df1 = df[df['ESTADO'] == estado]
 st.write(df1["STATUS"].value_counts())
 
-st.subheader("Evolução temporal do Número de Reclamações do Estado de "+option2)
+st.subheader("Evolução temporal do Número de Reclamações do Estado de "+estado)
 st.line_chart(df1.groupby('MES').nunique()['ID'])
