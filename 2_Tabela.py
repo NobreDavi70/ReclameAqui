@@ -39,15 +39,17 @@ option = st.sidebar.selectbox(
     'Qual empresa?',
     ('NAGEM', 'IBYTE', 'HAPVIDA'))
 
-#st.write(nag)
-st.write(df[df['EMPRESA'] == option].head(qtd))
-
 lista_estados = ["AL","AM","AP","BA","CE","DF","ES","GO","MA","MG","MS","MT","PA","PB","PE","PI","PR","RJ","RN","RR","RS","SC","SE","SP","TO"]
 
 st.sidebar.divider()
 option2 = st.sidebar.selectbox(
     'Qual Estado?',lista_estados)
-st.write(df[df['ESTADO'] == option2])
+
+#st.write(nag)
+st.write(df[df['EMPRESA'] == option and df['ESTADO'] == option2].head(qtd))
+
+#st.write(df[df['ESTADO'] == option2])
+
 #st.line_chart((df[df['ESTADO'] == option2 and df['EMPRESA'] == option]).groupby('MES').nunique()['ID'])
 st.metric(label="Total de Reclamações no Estado de "+option2, value=(df[df['ESTADO'] == option2])["ID"].count())
 df1 = df[df['ESTADO'] == option2]
