@@ -61,4 +61,4 @@ df1 = df[(df.EMPRESA == empresa) & (df.ESTADO == estado)]
 st.write(df1["STATUS"].value_counts())
 st.divider()
 st.subheader("Evolução temporal do Número de Reclamações do Estado de " + estado)
-st.line_chart(df1.groupby('MES').nunique()['ID'])
+st.line_chart(df1.groupby('MES').nunique()['ID'],x="Mês", y="Quantidade de Reclamações")
