@@ -30,10 +30,11 @@ df.drop('index',axis=1,inplace=True)
 df['TEMPO']=pd.to_datetime(df['TEMPO'])
 df['ESTADO'] = [x.split(' - ')[1] for x in df['LOCAL']]
 
-
+st.sidebar.subheader("Menu de Filtros")
+st.sidebar.divider()
 qtd = st.sidebar.slider('Quantas reclamações você deseja filtrar?', 0, 1000, 500)
+st.sidebar.divider()
 
-st.divider()
 option = st.selectbox(
     'Qual empresa?',
     ('NAGEM', 'IBYTE', 'HAPVIDA'))
